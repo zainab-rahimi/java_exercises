@@ -1,0 +1,27 @@
+BGE/SigmaWeb 2024-TD Java
+--------------------------
+2JEE-04.2-AttributesJSTL-CORR
+
+1/ Thème
+-------------------
+4ème projet JEE: JSTL (afficher dans la vue une liste/un annuaire/faire un test)
+	
+2/ Todo
+-------------
+	- Afficher une liste d'employés (un employé = prénom/nom/age/id)
+	- Afficher un annuaire de ces mêmes employés (clé=id)
+
+3/ Résultats attendus
+-------------
+	- La vue affiche les résultats dans un tableau avec titre et ligne paire et impaire de couleur différente
+	
+4/ Notice d'install (cf tuto)
+-------------
+	- Installer la JSTL (vérifier que les balises <c:out>, <c:foreach> sont disponibles)
+	- les employés sont injectés en dur dans un composant qui simule une base de données
+	(donc une classe Repository/EmployeeRepository par exemple)
+	
+
+5/ Bilan
+-------------
+    - La JSTL me permet d'afficher des listes, des annuaire de faire du test

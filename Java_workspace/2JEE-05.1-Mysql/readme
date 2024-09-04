@@ -1,0 +1,107 @@
+SigmaWeb 2023-TD Java
+--------------------------
+2JEE/05-AccesBD-CORR
+
+
+1/ Thème
+-------------------
+5ème projet JEE: La JDBC.
+	
+2/ Todo
+-------------
+	- Créer une table Employee (un salarié a un nom - prénom - âge - salaire). 	
+    - Se connecter à la base de données pour effectuer les opérations de type CRUD (search, create, read, update, delete)
+     
+3/ Résultats attendus
+-------------
+	- En fonction de la réussite des requêtes sql, le servlet renvoie vers jsp "fiche salarié" récapitulative ou "error"
+	avec l'information type d'erreur.
+
+4/ Notice d'install (mysql)
+-----------------------------
+	4.1/ Server/context.xml (avant la balise </context>):
+ 		--> préciser la source (cliquer sur Source et non Design)
+		avant la balise </context> rajouter:
+
+		<Resource name="jdbc/dbMysql" auth="Container" type="javax.sql.DataSource"
+				             maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+				             username="root" password="" driverClassName="com.mysql.cj.jdbc.Driver"
+				             url="jdbc:mysql://localhost:3306/test?serverTimezone=UTC"/>
+		- Si Pb timezone: 
+		redémarrer mysql avec dans la section mysqld de my.ini:
+		;;;;;;;;;;;;;;;;;;;;; si pb connexion jdbc avec erreur: timezone
+		default-time-zone = '+01:00'
+		;;;;;;;;;;;;;;;;;;;;;
+		
+	4.2/ Server/web.xml
+		--> déclarer la ressource (seul le ref-name est important)
+		<description>Mysql DBTest</description>
+		<resource-ref>
+		    <description>DB Connection</description>
+		    <res-ref-name>jdbc/dbMysql</res-ref-name>
+		    <res-type>javax.sql.DataSource</res-type>
+		    <res-auth>Container</res-auth>
+		</resource-ref>
+
+	4.3/ il faut télécharger le driver jdbc ici:
+		https://dev.mysql.com/downloads/connector/j/
+		
+	4.3.1/	copier mysql-connector.jar dans tomcat/lib (il faut que Tomcat connaisse le connecteur)
+	
+	4.4/ créer la base et la table EMPLOYEES via phpmyadmin, créer une clé primaire sur l'id:
+		
+		(alter table EMPLOYEES add primary key (ID)) et la peupler d'un ou deux éléments
+	
+	4.5/ code java de connexion:
+
+		private MysqlConnection(){
+				try {
+					Context ctx = new InitialContext();
+					DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/dbTest");
+					connect = dataSource.getConnection();
+					System.out.println("Connect BD ok...");
+				}
+				catch (Exception e) {
+					System.out.println("Connect BD nok..." + e.getMessage());
+				}
+			}
+	4.6/ faire un programme de test dans un premier temps, donc insérer le code précédent 
+	directement dans le controlleur central et constater que la connection est OK
+	
+	4.7/ faire un code opérationnel, ie faire un modèle, faire une couche DAO et donc
+	une méthode get(id) qui va "remonter" la fiche salarié
+	
+	exemple de code:
+		public Employee get(int id) throws DbsqlException  {
+		Employee emp = null;
+		String sql = "SELECT * FROM EMPLOYEES WHERE ID = " + id;
+		try {																// A la création de l'objet Statement...
+			Statement smt=this.connect.createStatement(						// ... possibilité de spécifier des paramètres pour une lecture particulière des résultats de la requête: 
+					ResultSet.TYPE_SCROLL_INSENSITIVE,						// 1er paramètre: la lecture des résultats peut se faire du début vers la fin des données renvoyées, ou inversement 
+																			// contrairement à "TYPE_FORWARD_READ" (par défaut) par lequel la consultation des résultats ne se fait qu'en avançant...
+																			//... Cependant si la BDD est modifiée pendant son parcours, ces changements n'apparaitront pas pendant la lecture en cours (pour celà utiliser "TYPE_SCROLL_SENSITIVE") 
+					ResultSet.CONCUR_READ_ONLY);							// 2nd paramètre: les données peuvent être mises à jour ou non
+			System.out.println("Request= " + sql );
+																			// Ici lecture seule (par défaut), utiliser "CONCUR_UPDATABLE" pour modifier les données et màj la bdd.
+			ResultSet rs = smt.executeQuery(sql);							// A l'exécution de la requête sql, l'objet ResultSet récupère et stocke les données.
+			if(rs.first())													// On place le curseur sur la 1ère ligne de résultat, si résultat il y a
+				emp = new Employee(id, rs.getString("name"),				// Création d'un objet Salarie à partir du contenu de chaque colonne de la BDD correspondant à la ligne retournée
+									   rs.getString("firstName"),
+									   rs.getInt("age"),
+									   rs.getInt("salary"));
+			else
+				System.out.println("Employee: " + id + " does not exist!");
+			rs.close();
+			smt.close();			
+		}catch (Exception e) {
+			throw new DbsqlException ("Request " + sql + " is incorrect: "+e.getMessage());
+		}
+		return emp;
+	}
+	
+
+5/ Bilan
+-------------
+    - La bibliothèque JAVA EE "JDBC" permet la connexion à n'importe quelle base de données. 
+    - Le procédé de connexion est ici différent, on n'utilise non pas la classe DriverManager mais DataSource.
+  

@@ -1,0 +1,30 @@
+SigmaWeb 2024-TD Java EE
+--------------------------
+
+1/ Thème
+-------------------
+1er projet JEE : afficher du contenu Web statique.
+
+2/ Todo
+-------------
+    - Produire une page Web qui propose "Hello" à l'écran.
+    
+3/ Résultats attendus
+-------------
+    - Sans création de index.html, Le rendu de "http://localhost:8080/2JEE-01-FirstDWP/ est en erreur
+   -  Après création de index.html au bon endroit, HELLO!! s'affiche bien
+
+    
+4/ Notice d'install
+-------------
+ - FAire un dynamic Web project
+ - Faire pointer le projet sur Tomcat pour l'exécution 
+ - créer des ressources statiques dans le dossier adéquat 
+
+5/ Autres solutions, cas dégradé
+-------------
+   - Rajouter d'autres pages statiques, une css, faire des liens, des images ...
+
+6/ Bilan
+-------------
+    - JAVA EE permet donc le déploiement d'applications web statiques sur serveur.

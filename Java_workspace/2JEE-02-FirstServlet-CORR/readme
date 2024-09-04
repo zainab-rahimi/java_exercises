@@ -1,0 +1,32 @@
+SigmaWeb 2024-TD Java EE
+--------------------------
+
+1/ Thème
+-------------------
+2nd projet JEE: générer dynamiquement une page web via une servlet (soit le Controleur C).
+
+2/ Todo
+-------------
+    - créer une page statique index.html
+    - créer un lien vers une autre page statique: link.html
+    - créer une page dynamique qui affiche un nombre aléatoire entre 1 et 100
+    - créer une feuille de style
+    
+3/ Résultats attendus
+-------------
+	- En tapant "http://localhost:8080/2JEE-02-FirstServlet-CORR/" dans la barre d'adresse du navigateur, celui-ci émet une requête http au serveur,
+	la servlet l'intercepte, traite la demande et génère la page correspondante, "index.html", qui est renvoyée au navigateur via une réponse http.
+	
+    
+4/ Notice d'install
+-------------
+ 	- Le HTML ne sait pas faire un calcul, il faut donc faire du Java pour le random!
+ 	- Les fichiers html et css se trouvent à la racine du dossier WebContent.
+
+5/ Bilan
+-------------
+    - En JAVA EE, le protocole http permet l'échange de donn�es entre client et serveur.
+    - Les servlets sont les contrôleurs, les points d'entrée des applications web.
+    - Elles sont chargées de répondre à une requête http en implémentant la (les) méthode(s) doGet() et/ou doPost().
+    - doGet est la méthode utilisée par le client pour récupérer via une URL une ressources web du serveur. 
+      Elle est aussi appelée par défaut.

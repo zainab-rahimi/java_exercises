@@ -1,0 +1,34 @@
+SigmaWeb 2024-TD Java
+--------------------------
+1/ Thème
+-------------
+Héritage/Polymorphisme
+
+2/ Todo
+-------------
+
+Un salarié=nom, revenu mensuel est payé sur 12 mois. Combien gagne-t-il par an?
+Un manager (un salarié) a en plus un bonus annuel
+
+	
+3/ Résultats attendus
+-------------
+Ex:
+Emp [name=Paul, mSal=2000, yIncomes=24000]
+Manager [bonus=5000, name=Carlos, mSal=3000, yIncomes=41000]
+	
+4/ Notice d'install
+-------------
+Commencer par créer le salarié.
+Puis rajouter le manager (On doit voir une méthode @override)
+Stocker plusieurs salariés/managers dans un tableau et afficher les résultats
+	
+5/ Autres solutions, cas dégradé
+-------------
+Rajouter le PDG qui en plus (par rapport au manager) a des stockoptions
+
+6/ Bilan
+-------------
+Dans Eclipse on est assisté pour ces mécanismes
+	
+	

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#firstPart{
+	color : "red";
+	background-color: lightgreen;
+}
+
+p{
+	color: blue;
+}
+

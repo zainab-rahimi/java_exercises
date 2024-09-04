@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- déf du bean: classe Java associée, saisie d'une propriété -->
+	<bean id="s1" class="Student">
+		<property name="name" value="Paul"></property>
+	</bean>
+	<bean id="s2" class="Student">
+		<property name="name" value="Elsa"></property>
+	</bean>
+
+</beans>

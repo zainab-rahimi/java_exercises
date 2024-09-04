@@ -1,0 +1,15 @@
+2021 Sigmaweb
+// 2 classes imbriquées
+// intérêt VI statiques
+//
+
+CDC TD 1JSE-07:
+- une personne=nom+prénom+age+adresse
+- une adresse=numéro+rue+code postal+ville
+
+1/ déclarer 2 personnes à deux adresses différentes (Paul&Virginie) 
+2/ faire déménager Paul chez Virginie!
+3/ déclaration une population de plusieurs personnes avec plusieurs adresses.
+4/ Déclarer d'autres personnes
+et tenter de les compter mais faire le travail depuis la classe Personne
+(-> ce n'est pas possible sauf si on déclare ce compteur: static)

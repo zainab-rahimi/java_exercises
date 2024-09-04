@@ -1,0 +1,37 @@
+TD06.0
+SigmaWeb 2024-TD Java
+--------------------------
+1/ Thème
+-------------
+Organiser un programme simple Java mode POO (cf tuto)
+
+2/ Todo
+-------------
+	Reprendre le tuto (gérer une personne par son prénom, et son entreprise)
+	Depuis le programme principal injecter les personnes avec une société 
+	(valeur par défaut: Orange)
+	Le point d'entrée est un tableau d'employés/société.
+	Le prénom doit être rendu en majuscule.
+	
+3/ Résultats attendus
+-------------
+-> Personne [nom=PAUL, societe=Sfr]
+-> Personne [nom=CYNTHIA, societe=Free]
+-> Personne [nom=PIERRE, societe=ORANGE]
+-> Personne [nom=ELSA, societe=ORANGE]
+
+	
+4/ Notice d'install
+-------------
+Le main doit être séparé de la classe 'métier' 
+(donc un fichier pour le main, un autre pour la classe 'métier')
+	
+5/ Autres solutions, cas dégradés
+-------------
+	
+
+6/ Bilan
+-------------
+
+	
+	

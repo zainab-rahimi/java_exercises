@@ -1,0 +1,22 @@
+h1{
+	color: green;
+	text-align:center;
+}
+h3{
+	text-decoration: underline overline #FF3028;
+	font-family: Helvetica, sans-serif;
+	color: rgb(64, 128, 128);
+}
+p{
+	color: red;
+	font-size:18px;
+}
+#myRandInt {
+	background-color: aquamarine;
+	font-size:30px;
+}
+#myServerPort {
+	background-color: greenyellow;
+	font-size:24px;
+}
+

@@ -1,0 +1,31 @@
+SigmaWeb 2023-TD Java
+--------------------------
+2JEE-06.1.2-Forms
+
+Autre exo sur Formulaire:
+
+- faire un formulaire <nom, pr�nom, sexe, age>
+
+- le but est de d�terminer la catégorie (sénior>60, Adulte>20<60, Jeune<20)
+
+2 cas:
+
+1/ Cas dégradé:
+
+- erreur si les champs texte ne sont pas remplis avec mini 3 caract�res
+
+- erreur si age > 100
+
+L'erreur s'affiche sur la même ligne que le champ en rouge
+
+2/ cas nominal: 
+
+- rediriger vers une autre page pour faire un rendu ("Vous êtes: Prénom Nom et vous avez 25 ans, vous êtes donc Adulte") (avec un lien "retour")
+
+
+Conseil:
+
+- pour les erreurs sur les champs  g�rer une hashmap (cl�=nom du champ, valeur = message d'erreur)
+
+- on peut g�rer ces formulaires dans un dossier sp�cifique form pour un peu "d�charger" le controller
+

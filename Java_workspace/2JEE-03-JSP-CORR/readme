@@ -1,0 +1,34 @@
+SigmaWeb 2024-TD Java EE
+--------------------------
+2JEE/03-JSP-CORR
+
+
+1/ Thème
+-------------------
+3ème projet JEE: les JSP- Java Server Pages.
+	
+2/ Todo
+-------------
+    - Associer une vue à une servlet.
+    
+3/ Résultats attendus
+-------------
+	- A l'appel de "http://localhost:8080/2JEE-03-JSP-CORR/MyJSP", la servlet effectue la redirection vers la vue MyJSP.jsp
+
+4/ Notice d'install
+-------------
+	- La JSP se trouve à la racine du dossier WEB-INF, dossier dont le contenu est masqué pour l'utilisateur.
+	- Indiquer dans la méthode doGet le chemin de la JSP à partir de la racine du projet
+	(instruction: 		
+	this.getServletContext().getRequestDispatcher("/WEB-INF/myjsp.jsp").forward( request, response );	
+		
+
+5/ Autres solutions, cas dégradé
+-------------
+	- Créer un modèle pour être conforme au modèle MVC.
+
+6/ Bilan
+-------------
+    - En JAVA EE, les pages JSP sont destinées à la vue. 
+    - Les JSP sont une technologies java qui génère des pages web dynamiques.
+    - Elles ont pour vocation d'afficher au client le résultat de la requête interceptée par la servlet.    

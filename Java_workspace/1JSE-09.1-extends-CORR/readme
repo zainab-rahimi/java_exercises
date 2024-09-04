@@ -1,0 +1,50 @@
+SigmaWeb 2021-TD Java
+--------------------------
+1/ Thème
+-------------
+Héritage/Polymorphisme
+
+2/ Todo
+-------------
+	• une voiture est définie par marque, modèle, identifiant (ex: 'toyota', 'corolla', 'ES-456-FW') 
+	et peut se déplacer sur un axe (par exemple l'A64, on s'intéresse donc à sa position)
+	• une voiture  de sport a en plus une vitesse Max
+	• une voiture familiale est une voiture avec un nombre de places assises (bonus)
+	
+	• vérifier qu'à la construction de la voiture de sport (ou la familiale) on passe bien par la 'voiture'
+	• écrire une méthode "afficher" (toString()) pour les 3 classes en faisant fonctionner
+le mécanisme d'héritage
+	• placer 3 voitures de type différent dans un tableau (une normale, une de sport, une familiale) et afficher!	
+	
+	• la voiture peut aussi démarrer (méthode start())
+	• elle peut se déplacer sur un axe (si elle est démarrée) : méthode move()
+	Chaque fois qu'on fait un "move()", elle bouge de 100kms (mais la voiture de sport fait 10% de trajet en plus) 
+	• toutes ces voitures se déplacent 3 fois, où se trouvent-elles au final?
+	
+	
+3/ Résultats attendus
+-------------
+	• Le programme produit:
+		un affichage (légèrement) différent pour la voiture de sport (la familiale)
+		Ex:
+-> Car [brand=Toyota, model=Corolla, id=ES-456-FW, position=300 (km) ]
+-> Car [brand=Volkswagen, model=Touran, id=PT-345-JH, position=300 (km) ] FamilyCar [seats=7]
+-> Car [brand=Porsche, model=Carrera, id=EX-567-ZA, position=364 (km) ] SportCar [speedValue=350]
+-> Car [brand=Rolls, model=Phantom, id=FR-334-RR, position=300 (km) ] PrestigeCar [price=300000 $]
+	
+4/ Notice d'install
+-------------
+	
+5/ Autres solutions, cas dégradé
+-------------
+	• commencer à créer des packages (com.xxx.model) notamment pour les objets métier
+
+6/ Bilan
+-------------
+	• la voiture de sport utilise les méthodes/le constructeur de la voiture
+	• Il a "en plus" un champ nouveau
+	• De ce fait, la méthode Afficher est polymorphe (le compilateur va rechercher "la bonne") 
+	et l'affichage est donc différent suivant la classe
+	
+	
+	

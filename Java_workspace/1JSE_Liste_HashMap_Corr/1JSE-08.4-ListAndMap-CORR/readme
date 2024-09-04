@@ -1,0 +1,37 @@
+cf doc 
+
+- Liste (Vector ou ArrayList): flexibilité par rapport au tableau
+
+- annuaire (Hashmap) : repérer un élément par sa clé et lui attribuer une valeur (couples clé/valeur)
+
+
+
+Exemple:
+
+1/- gérer des villes
+
+2/ - gérer des départements par leur numéro (la clé), la valeur étant le chef-lieu (ex 31-> Toulouse)
+
+
+Dans les 2 cas, il faut pouvoir ajouter, supprimer et lister (encapsuler ces actions).
+
+Pour le 1/ mon scénario c'est:
+- ajouter Toulouse, Paris, Nice
+
+- liste(-> Toulouse, Paris, Nice)
+
+- supprimer Paris
+
+- liste(-> Toulouse, Nice)
+
+Pour le 2/
+- ajouter 31 Toulouse, 13 Marseille, 75 Paris
+- lister
+
+- supprimer Paris
+
+- lister
+
+
+
+

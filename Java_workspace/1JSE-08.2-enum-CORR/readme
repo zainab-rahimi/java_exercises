@@ -1,0 +1,55 @@
+SigmaWeb 2023-TD Java
+--------------------------
+1/ Thème
+-------------
+Les Enumérations 
+
+2/ Todo
+-------------
+Gérer des jeunes : enfant(0,11), ado(12,14), junior (15, 18) 
+-> utiliser une enum : 
+Si je rentre par ex 16, je dois voir:
+
+"Vous êtes Junior car vous avez entre 15 et 18 ans"
+
+3/ Technique
+-------------
+Les Enumérations sont un ajout de Java 5, ce qui suit dans ce paragraphe ne concerne donc pas les versions antérieures de Java.
+Une Enum est un type de données particulier, dans lequel une variable ne peut prendre qu'un nombre restreint de valeurs. Ces valeurs sont des constantes nommées, par exemple MADAME, MADEMOISELLE, MONSIEUR.
+
+Utiliser dans Eclipse (new Enum)! (au lieu de New Class!)
+
+3.1/ Exemple simple
+public enum Civilite {  // dans le fichier Civilite.java  (des MAJUSCULES=Bonne pratique)
+    MADAME, MADEMOISELLE, MONSIEUR  
+}
+// main:
+Civilite civilite = Civilite.MADEMOISELLE ;
+
+
+3.2/ Utiliser un constructeur:
+Mais on peut aussi utiliser des constructeurs dans les Enum:
+
+public enum Civilite {  // dans le fichier Civilite.java  
+     MADAME("MME"), MADEMOISELLE("MLLE"), MONSIEUR("MR") ;   
+      
+     private String abreviation ;  
+     private Civilite(String abreviation) {  
+         this.abreviation = abreviation ;  
+    }  
+
+     public String getAbreviation() {  
+         return  this.abreviation ;  
+    }  
+}
+// main:
+Civilite civilite = Civilite.MADEMOISELLE ;
+System.out.println("Civilite : " + civilite + " [" + civilite.getAbreviation() + "]") ;
+
+// résultat: 
+Civilite : MADEMOISELLE [MLLE]
+
+
+4/ Aide:
+- dialogue clavier avec la classe Scanner (new Scanner (System.in))
+- la méthode 'values' peut être utile pour parcourir l'enum à la recherche de la tranche d'âge

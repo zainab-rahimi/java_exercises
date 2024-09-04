@@ -1,0 +1,35 @@
+SigmaWeb 2023-TD Java/POO
+--------------------------
+- Thème: POO+MVC
+en techno MVC, et en travaillant donc avec des packages pour bien différentier les composants
+- todo:
+ J'achète des meubles à un magasin à Toulouse, se posent les pbs de livraison:
+
+si le prix est supérieur/égal à 1000€, pas de frais, quelque soit la distance
+si le prix est inférieur à 1000€, 30€ de frais
+	si le lieu de livraison est à moins de 20 kms de Toulouse pas de frais supplémentaires
+	si le lieu est à plus de 20 kms de Toulouse, 40€ de frais
+	
+- Résultats attendus
+
+Entrer 4 produits dont la livraison et le prix varient (pour couvrir tous les cas)
+
+Afficher le bon de commande dans tous les cas!
+Exemple:
+Product [name=CANAPÉ, price=2000, dist=100, finalPrice=2000]
+Product [name=ARMOIRE, price=1500, dist=10, finalPrice=1500]
+Product [name=BUREAU, price=200, dist=140, finalPrice=270]
+Product [name=TABLE, price=500, dist=10, finalPrice=530]
+
+
+- conseil
+
+Pour faire une vue (par exemple une popup résultant), on peut s'inspirer de (swing components) :
+
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+
+import static javax.swing.JOptionPane.showMessageDialog;
+
+showMessageDialog(null, "a mess", "a title", INFORMATION_MESSAGE);
+
+

@@ -1,0 +1,36 @@
+SigmaWeb 2021-TD Java
+--------------------------
+2JEE/06-Forms-CORR
+------------------
+
+1/ Thème
+-------------------
+- faire un formulaire très basique : il s'agit d'un convertisseur
+EuroDollar (dans les 2 sens : 1€=1.14$)
+	
+2/ Todo
+-------------
+    - une partie métier
+    - une gestion d'exception (il doit y avoir une valeur calculée à ne pas dépasser (1000), on souhaite convertir "des petites sommes")
+    - un formulaire avec champ texte et radioButton
+    (request.getParameter('pName') -> restitue la valeur saisie dans le champ)
+    - la page rendue affiche:
+    --- l'erreur éventuelle en 'rouge' (cas d'erreur: si la valeur calculée est trop grande>1000)
+    --- le résultat de la conversion en 'vert'
+    --- à nouveau le formulaire
+    
+3/ Résultats attendus
+-------------
+	- maîtrise des formulaires en JEE
+	- utilisation des ELs pour afficher
+	
+4/ Notice d'install
+-------------
+- un seul servlet avec une partie doGet(formulaire vierge) et 
+doPost(analyse formulaire) à réaliser
+
+5/ Autres solutions, cas dégradé
+-------------
+
+6/ Bilan
+-------------

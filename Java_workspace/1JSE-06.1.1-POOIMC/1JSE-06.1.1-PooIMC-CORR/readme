@@ -1,0 +1,36 @@
+SigmaWeb 2024-TD Java
+--------------------------
+1/ Thème
+-------------
+Organiser un programme simple Java mode POO (avec un peu d'algorithmie)
+Introduire Constructeur/getter/setter/ToString()
+
+2/ Todo
+-------------
+Le calcul de l'IMC dépend du poids, de la taille (poids sur taille au carré, attention aux unités). Le coder en mode POO
+Dans le prog principal, mettre plusieurs personnes (de corpulence différente), les placer 
+dans un tableau puis afficher le tout.
+Faire plusieurs constructeurs (par exemple le poids de 85 kgs/taille: 185cms est par défaut)
+	
+	
+3/ Résultats attendus
+-------------
+	• En général, l'IMC est entre 15 et 40 suivant la corpulence
+	• Plusieurs calculs simultanés s'affichent comme suit:
+----> PersonImc [name=Djokovic, weight=85 kg, height=185 cms, imc=24.83564645726808]
+----> PersonImc [name=PilierAustralien, weight=135 kg, height=185 cms, imc=39.444850255661066]
+----> PersonImc [name=ChampionneDEscalade, weight=45 kg, height=160 cms, imc=17.578125]
+	
+	
+4/ Notice d'install
+-------------
+Le main doit être séparé de la classe Métier
+	
+5/ Autres solutions, cas dégradé
+-------------
+
+6/ Bilan
+-------------
+
+	
+	
